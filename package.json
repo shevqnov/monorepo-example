@@ -1,0 +1,14 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "build:client": "lerna run build --scope=client",
+    "build:server": "lerna run build --scope=server",
+    "start:client": "lerna run start --scope=client",
+    "start": "lerna run start --parallel",
+    "bootstrap": "lerna bootstrap"
+  },
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  }
+}

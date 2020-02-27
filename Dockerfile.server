@@ -1,0 +1,10 @@
+FROM node:12
+WORKDIR /usr/test
+RUN npm install -g lerna --loglevel notice
+COPY packages/shared ./packages/shared
+COPY packages/server ./packages/server
+COPY lerna.json .
+COPY package*.json .
+RUN lerna bootstrap
+EXPOSE 8080
+CMD ["node", "packages/server/dist/server.js"]
